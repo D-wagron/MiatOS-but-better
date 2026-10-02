@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<link rel="stylesheet" href="style.css">
+<script src="webOSjs.js" defer></script>
+
+
+<body>
+    <div class="nav">
+        <button id="welcomeopen" type="button">MiatOS</button>
+        <p id="timeElement">
+            Time
+        </p>
+    </div>
+
+
+    <!--App bar-->
+    <div id="desktopApps">
+        <!-- Added display: flex; and gap: 12px here -->
+        <div style="display: flex; gap: 12px; align-items: center; padding: 16px; filter: drop-shadow(0 0 2px black); width: fit-content;">
+            <div id="notesopen" class="unselected" onclick="handleIconTap(this)">
+                <img src="notes.png" id="notesicon" style="width: 32px; height: 32px; border-radius: 4px; padding-bottom: 0px;">
+            </div>
+            <div id="clockopen" class="unselected" onclick="handleIconTap(this)">
+                <img src="clock-icon.png" id="clockicon" style="width: 32px; height: 32px; border-radius: 4px; padding-bottom: 0px;">
+            </div>
+            <div id="game_corneropen" class="unselected" onclick="handleIconTap(this)">
+                <img src="game_corner.png" id="game_cornericon" style="width: 32px; height: 32px; border-radius: 4px; padding-bottom: 0px;">
+            </div>
+        </div>
+    </div>
+
+
+    <!--Notes app-->
+    <div class="notes" id="notes" style="display: none; width: 520px; height: 500px;">
+        <div id="notesheader" class="handle">
+            <button class="windowBttns" id="notesclose"></button><!--Close button-->
+        </div>
+        <div class="notescontent">
+            <p><b>Miata Notes</b></p>
+            <p>The MX-5 NA was produced from 1990 to 1997.</p>
+            <p><b>NA6 (1990-1993):</b> The earlier NA model that cam with a 1.6L engine and produced 116 horsepower.</p>
+            <br>
+            <p><b>NA8 (1994-1997):</b> The later NA model that came with a 1.8L engine and produced 128 horsepower.</p>
+            <p>This model also cae with a stronger rear differential and stronger chassis bracing.</p>
+        </div>
+    </div>
+
+
+    <!--Game Corner app-->
+    <div class="game_corner" id="game_corner" style="display: none; width: auto; height: auto;">
+        <div id="game_cornerheader" class="handle">
+            <button class="windowBttns" id="game_cornerclose"></button><!--Close button-->
+        </div>
+        <div class="game_cornercontent">
+            <h2><b>Games Corner</b></h2>
+            <p>(Percentage is achievement percent)</p>
+            <br>
+            <div class="game_corner_icons">
+                <img src="HK_icon.png" style="height: 64px; width: 64px;">
+                <h3><b>Hollow Knight</b></h3>
+            </div>
+            <p>[100%] P5 Markoth</p>
+            <br>
+            <div class="game_corner_icons">
+                <img src="Silksong_icon.png" style="height: 64px; width: 64px;">
+                <h3><b>Hollow Knight: Silksong</b></h3>
+            </div>
+            <p>[92%] Any% in 1:36:42</p>
+            <br>
+            <div class="game_corner_icons">
+                <img src="Peak_icon.png" style="height: 64px; width: 64px;">
+                <h3><b>PEAK</b></h3>
+            </div>
+            <p>[100%] I like climbing irl too</p>
+            <br>
+            <div class="game_corner_icons">
+                <img src="Portal2_icon.png" style="height: 64px; width: 64px;">
+                <h3><b>Portal 2</b></h3>
+            </div>
+            <p>[78%] Yes, I have played Portal</p>
+
+        </div>
+    </div>
+    
+
+
+    <!--Clock app-->
+    <div class="clock" id="clock" style="display: none;">
+        <div id="clockheader" class="handle">
+            <button class="windowBttns" id="clockclose"></button>
+        </div>
+        <div class="clockcontent">
+            <canvas id="analogueClock" width="220" height="220" style="background-color:#fff; border-radius:50%; margin-top:15px; box-shadow: inset 0 0 10px rgba(0,0,0,0.1);"></canvas>
+            <div id="appClockDisplay" style="font-size: 3rem; margin-top: 20px; text-align: center;">00:00:00</div>
+        </div>
+    </div>
+
+    <!--Welcome content-->
+    <div class="welcome" id="welcome">
+        <div id="welcomeheader" class="handle">
+            <button class="windowBttns" id="welcomeclose"></button><!--Close button-->
+        </div>
+        <div class="welcomecontent">
+            <h1>Welcome to MiatOS!</h1>
+            <h3>MiatOs is a fun little OS to satiate my desire for a Miata</h3>
+            <h3>Please have a look around and test this project out.</h3>
+            <h5>This window is reopenable by pressing MiatOS in the top left corner.</h5>
+        </div>
+
+    </div>
+
+
+</body>
+</html>

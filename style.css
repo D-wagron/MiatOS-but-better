@@ -1,0 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swa');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    font-family: "Space Mono", monospace;
+    background-image: url(wp10521277-miata-na-wallpapers.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+
+}
+
+.welcome {
+    background-color: #e5e5e5;
+    border: solid;
+    width: 50%;
+    border-radius: 15px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 0;
+    padding-top: 0;
+}
+
+.nav {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    backdrop-filter: blur(10px);
+    background-color: rgba(0, 0, 0, 0.125);
+    color: #fff;
+}
+
+p {
+    margin-left: 16px;
+    margin-right: 16px;
+    background-color: rgba(229, 229, 229, 0.25);
+    padding: 4px 12px;
+    border-radius: 16px;
+    filter: none;
+}
+
+.welcomecontent {
+    padding: 15px;
+    padding-top: 0;
+}
+
+.handle {
+    height: 20px;
+    width: 100%;
+    padding: 0 10px;
+    margin: 0;
+    background: #999;
+    border-radius: 12px 12px 0 0;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.windowBttns {
+    cursor: pointer;
+    width: 12px;
+    height: 12px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#welcomeclose {
+    background-color: red;
+}
+
+#notesclose {
+    background-color: red;
+}
+
+#clockclose {
+    background-color: red;
+}
+
+.notes {
+    top: calc(50% - 240px);
+    left: calc(50% - 260px);
+    margin-top: 0;
+    padding-top: 0;
+    position: absolute;
+    background-color: #e5e5e5;
+    border: solid;
+    border-radius: 15px;
+}
+
+.notescontent {
+    border-radius: 12px;
+    width: 520px;
+    height: 480px;
+    padding: 16px;
+}
+
+.game_corner {
+    top: calc(75px);
+    left: calc(50px);
+    margin-top: 0;
+    padding-top: 0;
+    position: absolute;
+    background-color: #e5e5e5;
+    border: solid;
+    border-radius: 15px;
+}
+
+.game_cornercontent {
+    border-radius: 12px;
+    width: auto;
+    height: auto;
+    padding: 16px;
+}
+
+.game_corner_icons {
+    display: flex;
+}
+
+#game_cornerclose {
+    background-color: red;
+}
+
+.clock {
+    top: calc(50% - 240px);
+    left: calc(50% - 260px);
+    margin-top: 0;
+    padding-top: 0;
+    position: absolute;
+    background-color: #e5e5e5;
+    border: solid;
+    border-radius: 15px;
+}
+
+.clockcontent {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    border-radius: 12px;
+    width: auto;
+    height: auto;
+    padding: 16px;
+}
+
+#welcomeopen {
+    font-family: inherit;
+    all: unset;
+    margin-left: 16px;
+    margin-right: 16px;
+    padding: 4px 12px;
+    background-color: rgba(229, 229, 229, 0.25);
+    border-radius: 16px;
+}
+
+#desktopApps {
+    position: fixed;
+    display: flex;
+    gap: 12px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.125);
+    height: 70px;
+}
+
+.selected {
+    display: inline-flex;
+    vertical-align: middle;
+    border-radius: 6px;
+    outline: 2px solid white;
+    outline-offset: 0;
+}
+
+.welcome.active-window, .notes.active-window, .clock.active-window, .game_corner.active-window{
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.35);
+    outline: 1px solid rgba(0, 0, 0, 0.8);
+}
