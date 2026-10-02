@@ -72,19 +72,9 @@ p {
     border: none;
     border-radius: 50%;
     cursor: pointer;
-}
-
-#welcomeclose {
     background-color: red;
 }
 
-#notesclose {
-    background-color: red;
-}
-
-#clockclose {
-    background-color: red;
-}
 
 .notes {
     top: calc(50% - 240px);
@@ -104,6 +94,25 @@ p {
     padding: 16px;
 }
 
+.music_player {
+    top: calc(50% - 240px);
+    left: calc(50% - 260px);
+    margin-top: 0;
+    padding-top: 0;
+    position: absolute;
+    background-color: #e5e5e5;
+    border: solid;
+    border-radius: 15px;
+}
+
+.music_playercontent {
+    border-radius: 12px;
+    width: 520px;
+    height: 480px;
+    padding: 16px;
+}
+
+
 .game_corner {
     top: calc(75px);
     left: calc(50px);
@@ -114,6 +123,7 @@ p {
     border: solid;
     border-radius: 15px;
 }
+
 
 .game_cornercontent {
     border-radius: 12px;

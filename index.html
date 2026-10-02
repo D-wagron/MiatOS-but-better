@@ -25,6 +25,9 @@
             <div id="game_corneropen" class="unselected" onclick="handleIconTap(this)">
                 <img src="game_corner.png" id="game_cornericon" style="width: 32px; height: 32px; border-radius: 4px; padding-bottom: 0px;">
             </div>
+            <div id="music_playeropen" class="unselected" onclick="handleIconTap(this)">
+                <img src="nondescript-music-player.png" id="music_playericon" style="width: 32px; height: 32px; border-radius: 4px; padding-bottom: 0px;">
+            </div>
         </div>
     </div>
 
@@ -80,7 +83,6 @@
 
         </div>
     </div>
-    
 
 
     <!--Clock app-->
@@ -94,6 +96,19 @@
         </div>
     </div>
 
+
+
+    <!--Music Player app-->
+    <div class="music_player" id="music_player" style="display: none;">
+        <div id="music_playerheader" class="handle">
+            <button class="windowBttns" id="music_playerclose"></button>
+        </div>
+        <div class="music_playercontent">
+            
+        </div>
+    </div>
+
+
     <!--Welcome content-->
     <div class="welcome" id="welcome">
         <div id="welcomeheader" class="handle">
@@ -101,7 +116,7 @@
         </div>
         <div class="welcomecontent">
             <h1>Welcome to MiatOS!</h1>
-            <h3>MiatOs is a fun little OS to satiate my desire for a Miata</h3>
+            <h3>MiatOS is a fun little OS to satiate my desire for a Miata</h3>
             <h3>Please have a look around and test this project out.</h3>
             <h5>This window is reopenable by pressing MiatOS in the top left corner.</h5>
         </div>

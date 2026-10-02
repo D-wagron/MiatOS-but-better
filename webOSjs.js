@@ -22,7 +22,8 @@ var appRegistry = [
     { window: document.querySelector("#welcome"), iconId: "#welcomeopen" },
     { window: document.querySelector("#notes"), iconId: "#notesopen" },
     { window: document.querySelector("#game_corner"), iconId: "#game_corneropen"},
-    { window: document.querySelector("#clock"), iconId: "#clockopen" }
+    { window: document.querySelector("#clock"), iconId: "#clockopen" },
+    { window: document.querySelector("music_player"), iconID: "#music_playeropen"},
 ];
 
 
@@ -193,6 +194,10 @@ var game_cornerScreen = document.querySelector("#game_corner");
 var game_cornerScreenClose = document.querySelector("#game_cornerclose");
 var game_cornerScreenOpen = document.querySelector("#game_corneropen");
 
+var music_playerScreen = document.querySelector("#music_player");
+var music_playerScreenClose = document.querySelector("#music_playerclose");
+var music_playerScreenOpen = document.querySelector("#music_playeropen");
+
 
 if (welcomeScreenClose && welcomeScreenOpen) {
     welcomeScreenClose.addEventListener("click", () => closeWindow(welcomeScreen, "#welcomeopen"));
@@ -214,6 +219,11 @@ if (clockScreenClose && clockScreenOpen) {
 if (game_cornerScreenClose && game_cornerScreenOpen) {
     game_cornerScreenClose.addEventListener("click", () => closeWindow(game_cornerScreen, "#game_corneropen"));
     game_cornerScreenOpen.addEventListener("click", () => openWindow(game_cornerScreen, "#game_corneropen"));
+}
+
+if (music_playerScreenClose && music_playerScreenOpen) {
+    music_playerScreenClose.addEventListener("click", () => closeWindow(music_playerScreen, "#music_playeropen"));
+    music_playerScreenOpen.addEventListener("click", () => openWindow(music_playerScreen, "#music_playeropen"));
 }
 
 
@@ -250,12 +260,14 @@ checkInitialWindowState(welcomeScreen, "#welcomeopen");
 checkInitialWindowState(notesScreen, "#notesopen");
 checkInitialWindowState(clockScreen, "#clockopen");
 checkInitialWindowState(game_cornerScreen, "#game_corneropen");
+checkInitialWindowState(music_playerScreen, "#music_playeropen");
 
 
 dragElement(document.querySelector("#notes"));
 dragElement(document.querySelector("#welcome"));
 dragElement(document.querySelector("#clock"));
 dragElement(document.querySelector("#game_corner"));
+dragElement(document.querySelector("#music_player"))
 
 
 function dragElement(element) {
