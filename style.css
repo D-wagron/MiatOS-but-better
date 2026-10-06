@@ -1,5 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swa');
 
+body, #desktop {
+    cursor: url('mouse.png') 0 0, auto;
+}
+
+button,
+.windowBttns,
+.handle 
+button:hover, 
+button:focus, 
+button:active, 
+.dock_icon:hover, 
+.dock_icon:active, 
+#desktopApps div:hover {
+    cursor: url('mouse2.png') 6 0, pointer;
+}
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -191,7 +207,7 @@ p {
     outline-offset: 0;
 }
 
-.welcome.active-window, .notes.active-window, .clock.active-window, .game_corner.active-window{
+.welcome.active-window, .notes.active-window, .clock.active-window, .game_corner.active-window .music_playeractive-window{
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.35);
     outline: 1px solid rgba(0, 0, 0, 0.8);
 }

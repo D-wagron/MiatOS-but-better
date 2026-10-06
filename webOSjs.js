@@ -23,7 +23,7 @@ var appRegistry = [
     { window: document.querySelector("#notes"), iconId: "#notesopen" },
     { window: document.querySelector("#game_corner"), iconId: "#game_corneropen"},
     { window: document.querySelector("#clock"), iconId: "#clockopen" },
-    { window: document.querySelector("music_player"), iconID: "#music_playeropen"},
+    { window: document.querySelector("#music_player"), iconID: "#music_playeropen"},
 ];
 
 
@@ -173,6 +173,24 @@ function openWindow(windowElement, iconId) {
                 deselectIcon(selectedIcon);
             }
             selectIcon(iconElement);
+        }
+    }
+}
+
+function handleIconTap(element) {
+    var appId = element.id.replace("open", "");
+    var windowEl = document.querySelector("#" + appId);
+    
+    if (windowEl) {
+        if (windowEl.style.display === "none") {
+            openWindow(windowEl, "#" + element.id);
+        } else {
+            // If already focused, clicking dock icon toggles/minimizes it
+            if (windowEl.classList.contains("active-window")) {
+                closeWindow(windowEl, "#" + element.id);
+            } else {
+                focusWindow(windowEl);
+            }
         }
     }
 }

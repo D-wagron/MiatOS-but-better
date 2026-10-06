@@ -26,6 +26,8 @@ But with better documentation (and more added to it)
 
 - ~ALL HAIL THE MIATA~ MX-5 theme desktop
 
+- Pixel art cursor that has two states: normal, and hover
+
 
 # Code
 
