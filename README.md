@@ -1,6 +1,7 @@
 # MiatOS 
 
 But with better documentation (and more added to it)
+
 Project was started for Hackclub Stardance
 
 ---
@@ -22,10 +23,15 @@ Project was started for Hackclub Stardance
 - Custom pixel art icons
 
 - Openable apps:
+
     Notes
+
     Clock
+
     Game corner
+
     Non-descript music player (work in progress)
+    
     Search
 
 - Draggable windows (from the grey header bar)
