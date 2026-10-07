@@ -28,6 +28,25 @@
             <div id="music_playeropen" class="unselected" onclick="handleIconTap(this)">
                 <img src="nondescript-music-player.png" id="music_playericon" style="width: 32px; height: 32px; border-radius: 4px; padding-bottom: 0px;">
             </div>
+            <div id="searchopen" class="unselected" onclick="handleIconTap(this)">
+                <img src="search.png" id="searchicon" style="width: 32px; height: 32px; border-radius: 4px; padding-bottom: 0px;">
+            </div>
+        </div>
+    </div>
+
+    <!--Search app-->
+    <div class="search" id="search" style="display: none; width: 520px; height: auto;">
+        <div id="searchheader" class="handle">
+            <button class="windowBttns" id="searchclose"></button><!--Close button-->
+        </div>
+        <div class="searchcontent">
+            <div class="search_bar">
+                <input id="searchInput" type="text" placeholder="Search the web...">
+                <button id="searchButton">
+                    <img src="search_icon.png" style="width: 32px; height: 32px;">
+                </button>
+                
+            </div>
         </div>
     </div>
 

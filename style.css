@@ -6,7 +6,7 @@ body, #desktop {
 
 button,
 .windowBttns,
-.handle 
+.handle,
 button:hover, 
 button:focus, 
 button:active, 
@@ -91,7 +91,6 @@ p {
     background-color: red;
 }
 
-
 .notes {
     top: calc(50% - 240px);
     left: calc(50% - 260px);
@@ -128,7 +127,6 @@ p {
     padding: 16px;
 }
 
-
 .game_corner {
     top: calc(75px);
     left: calc(50px);
@@ -139,7 +137,6 @@ p {
     border: solid;
     border-radius: 15px;
 }
-
 
 .game_cornercontent {
     border-radius: 12px;
@@ -177,6 +174,52 @@ p {
     padding: 16px;
 }
 
+.search {
+    top: calc(50% - 240px);
+    left: calc(50% - 260px);
+    margin-top: 0;
+    padding-top: 0;
+    position: absolute;
+    background-color: #e5e5e5;
+    border: solid;
+    border-radius: 15px;
+}
+
+.searchcontent {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    border-radius: 12px;
+    width: auto;
+    height: auto;
+    padding: 16px;
+}
+
+.search_bar {
+    background-color: #c4c4c4;
+    border-radius: 20px;
+    padding: 10px 20px 10px 20px;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+}
+
+#searchInput {
+    border: none;
+    background: none;
+    color: inherit;
+}
+
+input {
+    font-family: "Space Mono", monospace;
+    color: black;
+}
+
+#searchButton {
+    border: none;
+    background: none;
+}
+
 #welcomeopen {
     font-family: inherit;
     all: unset;
@@ -207,7 +250,7 @@ p {
     outline-offset: 0;
 }
 
-.welcome.active-window, .notes.active-window, .clock.active-window, .game_corner.active-window .music_playeractive-window{
+.welcome.active-window, .notes.active-window, .clock.active-window, .game_corner.active-window, .music_playeractive-window, .searchactive-window{
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.35);
     outline: 1px solid rgba(0, 0, 0, 0.8);
 }

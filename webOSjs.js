@@ -23,7 +23,8 @@ var appRegistry = [
     { window: document.querySelector("#notes"), iconId: "#notesopen" },
     { window: document.querySelector("#game_corner"), iconId: "#game_corneropen"},
     { window: document.querySelector("#clock"), iconId: "#clockopen" },
-    { window: document.querySelector("#music_player"), iconID: "#music_playeropen"},
+    { window: document.querySelector("#music_player"), iconId: "#music_playeropen"},
+    { window: document.querySelector("#search"), iconId: "#searchopen"},
 ];
 
 
@@ -216,6 +217,10 @@ var music_playerScreen = document.querySelector("#music_player");
 var music_playerScreenClose = document.querySelector("#music_playerclose");
 var music_playerScreenOpen = document.querySelector("#music_playeropen");
 
+var searchScreen = document.querySelector("#search");
+var searchScreenClose = document.querySelector("#searchclose");
+var searchScreenOpen = document.querySelector("#searchopen");
+
 
 if (welcomeScreenClose && welcomeScreenOpen) {
     welcomeScreenClose.addEventListener("click", () => closeWindow(welcomeScreen, "#welcomeopen"));
@@ -242,6 +247,11 @@ if (game_cornerScreenClose && game_cornerScreenOpen) {
 if (music_playerScreenClose && music_playerScreenOpen) {
     music_playerScreenClose.addEventListener("click", () => closeWindow(music_playerScreen, "#music_playeropen"));
     music_playerScreenOpen.addEventListener("click", () => openWindow(music_playerScreen, "#music_playeropen"));
+}
+
+if (searchScreenClose && searchScreenOpen) {
+    searchScreenClose.addEventListener("click", () => closeWindow(searchScreen, "#music_playeropen"));
+    searchScreenOpen.addEventListener("click", () => openWindow(searchScreen, "#searchopen"));
 }
 
 
@@ -279,13 +289,15 @@ checkInitialWindowState(notesScreen, "#notesopen");
 checkInitialWindowState(clockScreen, "#clockopen");
 checkInitialWindowState(game_cornerScreen, "#game_corneropen");
 checkInitialWindowState(music_playerScreen, "#music_playeropen");
+checkInitialWindowState(searchScreen, "#searchopen");
 
 
 dragElement(document.querySelector("#notes"));
 dragElement(document.querySelector("#welcome"));
 dragElement(document.querySelector("#clock"));
 dragElement(document.querySelector("#game_corner"));
-dragElement(document.querySelector("#music_player"))
+dragElement(document.querySelector("#music_player"));
+dragElement(document.querySelector("#search"));
 
 
 function dragElement(element) {
@@ -328,3 +340,26 @@ function dragElement(element) {
     }
 }
 
+
+const searchInput = document.getElementById("searchInput");
+const searchButton = document.getElementById("searchButton");
+
+function searchWeb() {
+    const query = searchInput.value;
+
+    if (query.trim() === "") {
+        return;
+    }
+
+    const url = "https://www.google.com/search?q=" + encodeURIComponent(query);
+
+    window.open(url, "_blank");
+}
+
+searchButton.addEventListener("click", searchWeb);
+
+searchInput.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        searchWeb();
+    }
+});
