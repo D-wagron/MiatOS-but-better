@@ -21,12 +21,12 @@ But with better documentation (and more added to it)
 
 - Custom pixel art icons
 
-- Openable apps
-    - Notes
-    - Clock
-    - Game corner
-    - Non-descript music player (work in progress)
-    - Search
+- Openable apps:
+    Notes
+    Clock
+    Game corner
+    Non-descript music player (work in progress)
+    Search
 
 - Draggable windows (from the grey header bar)
 
@@ -42,3 +42,6 @@ But with better documentation (and more added to it)
 - CSS
 
 - Javascript
+
+
+[You can try this project here](https://d-wagron.github.io/MiatOS-but-better/)
