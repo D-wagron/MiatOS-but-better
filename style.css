@@ -24,7 +24,7 @@ button:active,
 body {
     margin: 0;
     font-family: "Space Mono", monospace;
-    background-image: url(wp10521277-miata-na-wallpapers.jpg);
+    background-image: url("wp10521277-miata-na-wallpapers.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
@@ -74,7 +74,7 @@ p {
     width: 100%;
     padding: 0 10px;
     margin: 0;
-    background: #999;
+    background: #AAAAAA;
     border-radius: 12px 12px 0 0;
     display: flex;
     gap: 8px;
@@ -110,14 +110,17 @@ p {
 }
 
 .music_player {
-    top: calc(50% - 240px);
-    left: calc(50% - 260px);
+    top: calc(100px);
+    left: calc(100% - 600px);
     margin-top: 0;
     padding-top: 0;
     position: absolute;
     background-color: #e5e5e5;
     border: solid;
     border-radius: 15px;
+    -webkit-backdrop-filter: blur(30px);
+    backdrop-filter: blur(30px);
+    background-color: rgba(255, 255, 255, 0.25);
 }
 
 .music_playercontent {
@@ -125,6 +128,22 @@ p {
     width: 520px;
     height: 480px;
     padding: 16px;
+    background-color: none;
+
+}
+
+.music_playercontent {
+    border-radius: 12px;
+    width: 520px;
+    height: 480px;
+    padding: 12px;     
+    background-color: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.music_playercontent iframe {
+    flex-grow: 1;
 }
 
 .game_corner {
@@ -250,7 +269,7 @@ input {
     outline-offset: 0;
 }
 
-.welcome.active-window, .notes.active-window, .clock.active-window, .game_corner.active-window, .music_playeractive-window, .searchactive-window{
+.welcome.active-window, .notes.active-window, .clock.active-window, .game_corner.active-window, .music_player.active-window, .search.active-window {
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.35);
     outline: 1px solid rgba(0, 0, 0, 0.8);
 }

@@ -30,7 +30,7 @@ Project was started for Hackclub Stardance
 
     Game corner
 
-    Non-descript music player (work in progress)
+    Non-descript music player (Plays MiatOS playlist from Spotify)
     
     Search
 

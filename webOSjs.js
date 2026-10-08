@@ -250,7 +250,7 @@ if (music_playerScreenClose && music_playerScreenOpen) {
 }
 
 if (searchScreenClose && searchScreenOpen) {
-    searchScreenClose.addEventListener("click", () => closeWindow(searchScreen, "#music_playeropen"));
+    searchScreenClose.addEventListener("click", () => closeWindow(searchScreen, "#searchopen"));
     searchScreenOpen.addEventListener("click", () => openWindow(searchScreen, "#searchopen"));
 }
 
@@ -363,3 +363,26 @@ searchInput.addEventListener("keydown", function(event) {
         searchWeb();
     }
 });
+
+
+setInterval(function() {
+    var activeElement = document.activeElement;
+    var musicPlayerIframe = document.querySelector(".music_playercontent iframe");
+    
+    if (activeElement && activeElement === musicPlayerIframe) {
+        var musicWindow = document.querySelector("#music_player");
+        
+        if (musicWindow && !musicWindow.classList.contains("active-window")) {
+            focusWindow(musicWindow);
+            
+            var iconElement = document.querySelector("#music_playeropen");
+            if (iconElement && selectedIcon !== iconElement) {
+                if (selectedIcon) deselectIcon(selectedIcon);
+                selectIcon(iconElement);
+            }
+        }
+        
+        window.focus(); 
+    }
+}, 200);
+
