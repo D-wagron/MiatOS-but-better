@@ -109,6 +109,59 @@ p {
     padding: 16px;
 }
 
+.terminal {
+    top: calc(50% - 240px);
+    left: calc(50% - 260px);
+    margin-top: 0;
+    padding-top: 0;
+    position: absolute;
+    background-color: #313233;
+    border: solid;
+    border-radius: 15px;
+}
+
+.terminalcontent {
+    border-radius: 0 0 12px 12px;
+    box-sizing: border-box;
+    height: calc(100% - 35px);
+    padding: 16px;
+    background: #313233;
+    color: #e6e6e6;
+    font-family: monospace;
+    font-size: 14px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.terminaloutput {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.terminalinputline {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-top: 6px;
+}
+
+.terminalinputline label {
+    color: #7CFC00;
+    white-space: nowrap;
+}
+
+#terminalinput {
+    flex: 1;
+    min-width: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    color: #e6e6e6;
+    font: inherit;
+    caret-color: #7CFC00;
+}
+
 .music_player {
     top: calc(100px);
     left: calc(100% - 600px);

@@ -34,6 +34,8 @@ Project was started for Hackclub Stardance
     
     Search
 
+    Terminal (Commands: help,  fastfetch, btop, about, clear)
+
 - Draggable windows (from the grey header bar)
 
 - ~ALL HAIL THE MIATA~ MX-5 theme desktop

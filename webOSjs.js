@@ -25,6 +25,7 @@ var appRegistry = [
     { window: document.querySelector("#clock"), iconId: "#clockopen" },
     { window: document.querySelector("#music_player"), iconId: "#music_playeropen"},
     { window: document.querySelector("#search"), iconId: "#searchopen"},
+    { window: document.querySelector("#terminal"), iconId: "#terminalopen"},
 ];
 
 
@@ -221,6 +222,10 @@ var searchScreen = document.querySelector("#search");
 var searchScreenClose = document.querySelector("#searchclose");
 var searchScreenOpen = document.querySelector("#searchopen");
 
+var terminalScreen = document.querySelector("#terminal");
+var terminalScreenClose = document.querySelector("#terminalclose");
+var terminalScreenOpen = document.querySelector("#terminalopen");
+
 
 if (welcomeScreenClose && welcomeScreenOpen) {
     welcomeScreenClose.addEventListener("click", () => closeWindow(welcomeScreen, "#welcomeopen"));
@@ -252,6 +257,11 @@ if (music_playerScreenClose && music_playerScreenOpen) {
 if (searchScreenClose && searchScreenOpen) {
     searchScreenClose.addEventListener("click", () => closeWindow(searchScreen, "#searchopen"));
     searchScreenOpen.addEventListener("click", () => openWindow(searchScreen, "#searchopen"));
+}
+
+if (terminalScreenClose && terminalScreenOpen) {
+    terminalScreenClose.addEventListener("click", () => closeWindow(terminalScreen, "#terminalopen"));
+    terminalScreenOpen.addEventListener("click", () => openWindow(terminalScreen, "#terminalopen"));
 }
 
 
@@ -290,6 +300,7 @@ checkInitialWindowState(clockScreen, "#clockopen");
 checkInitialWindowState(game_cornerScreen, "#game_corneropen");
 checkInitialWindowState(music_playerScreen, "#music_playeropen");
 checkInitialWindowState(searchScreen, "#searchopen");
+checkInitialWindowState(terminalScreen, "#terminalopen");
 
 
 dragElement(document.querySelector("#notes"));
@@ -298,6 +309,7 @@ dragElement(document.querySelector("#clock"));
 dragElement(document.querySelector("#game_corner"));
 dragElement(document.querySelector("#music_player"));
 dragElement(document.querySelector("#search"));
+dragElement(document.querySelector("#terminal"));
 
 
 function dragElement(element) {
@@ -386,3 +398,71 @@ setInterval(function() {
     }
 }, 200);
 
+
+
+const terminalInput = document.getElementById("terminalinput");
+const terminalOutput = document.getElementById("terminaloutput");
+const terminalContent = document.getElementById("terminalcontent");
+
+terminalInput.addEventListener("keydown", function(event) {
+    if (event.key !== "Enter") return;
+
+    const command = terminalInput.value.trim();
+
+    if (command === "") return;
+
+    // Clear the previous output if requested.
+    if (command.toLowerCase() === "clear") {
+        terminalOutput.textContent = "";
+        terminalInput.value = "";
+        return;
+    }
+
+    // Display the command that was entered.
+    const commandLine = document.createElement("div");
+    commandLine.textContent = "dwagron@miatos:~$ " + command;
+    terminalOutput.appendChild(commandLine);
+
+    // Work out the command's response.
+    const response = runCommand(command);
+
+    if (response !== "") {
+        const outputLine = document.createElement("div");
+        outputLine.textContent = response;
+        terminalOutput.appendChild(outputLine);
+    }
+
+    // Prepare for the next command.
+    terminalInput.value = "";
+    terminalContent.scrollTop = terminalContent.scrollHeight;
+});
+
+function runCommand(command) {
+    switch (command.toLowerCase()) {
+        case "help":
+            return "Available commands: help, fastfetch, btop, about, clear";
+
+        case "fastfetch":
+            return `      ______
+  ___/      \\___
+ (     MIATA    '<
+  '-(_)-----(_)--'
+
+OS: MiatOS
+Host: Browser
+Shell: MiatOS Terminal
+Theme: Whimsy-Retro`;
+
+        case "btop":
+            return `MiatOS System Monitor
+CPU  [#####-----] 50%
+RAM  [######----] 62%
+Note: These are simulated values.`;
+
+        case "about":
+            return "MiatOS Terminal v1.0 - A tiny shell for an OS that runs on whimsy.";
+
+        default:
+            return "Command not found: " + command;
+    }
+}

@@ -31,6 +31,26 @@
             <div id="searchopen" class="unselected" onclick="handleIconTap(this)">
                 <img src="search.png" id="searchicon" style="width: 32px; height: 32px; border-radius: 4px; padding-bottom: 0px;">
             </div>
+            <div id="terminalopen" class="unselected" onclick="handleIconTap(this)">
+                <img src="terminal.png" id="terminalicon" style="width: 32px; height: 32px; border-radius: 4px; padding-bottom: 0px;">
+            </div>
+        </div>
+    </div>
+
+    <!--Terminal app-->
+    <div class="terminal" id="terminal" style="display: none; width: 520px; height: 500px;">
+        <div id="terminalheader" class="handle">
+            <button class="windowBttns" id="terminalclose"></button><!--Close button-->
+        </div>
+        <div class="terminalcontent">
+            <div class="terminaloutput" id="terminaloutput"></div>
+
+            <div class="terminalinputline">
+                <label for="terminalinput">dwagron@miatos:~$</label>
+                <input
+                    type="text" id="terminalinput" autocomplete="off" spellcheck="false" autofocus>
+            </div>
+
         </div>
     </div>
 
@@ -86,7 +106,7 @@
                 <img src="Silksong_icon.png" style="height: 64px; width: 64px;">
                 <h3><b>Hollow Knight: Silksong</b></h3>
             </div>
-            <p>[92%] Any% in 1:36:42</p>
+            <p>[94%] Any% in 1:36:42</p>
             <br>
             <div class="game_corner_icons">
                 <img src="Peak_icon.png" style="height: 64px; width: 64px;">
