@@ -4,6 +4,8 @@ But with better documentation (and more added to it)
 
 Project was started for Hackclub Stardance
 
+I made it look minamalistic to my tastes. They might not be good tastes, but I like it. Not an AI's decision
+
 ---
 
 # Apps
